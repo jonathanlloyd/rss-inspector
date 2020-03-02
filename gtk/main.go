@@ -3,6 +3,7 @@ package main
 import (
 	"os"
 
+	"github.com/jonathanlloyd/rss-inspector/gtk/views"
 	"github.com/mattn/go-gtk/glib"
 	"github.com/mattn/go-gtk/gtk"
 )
@@ -19,7 +20,11 @@ func main() {
 	window.Connect("destroy", func(ctx *glib.CallbackContext) {
 		gtk.MainQuit()
 	}, "foo")
-	window.SetSizeRequest(600, 600)
+	window.SetSizeRequest(600, 900)
+
+	mainScreen := views.NewMainScreen()
+	mainScreen.Mount(window)
+
 	window.ShowAll()
 	gtk.Main()
 }

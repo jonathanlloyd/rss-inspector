@@ -3,4 +3,4 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-go build -o ./bin/rss-inspector main.go
+go build -o ./bin/rss-inspector ./gtk/main.go
